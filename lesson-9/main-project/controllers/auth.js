@@ -8,7 +8,7 @@ const path = require("path");
 const { SECRET_KEY } = process.env;
 const gravatar = require("gravatar");
 
-const avatarsDir = path.join(__dirname, "../", "publick", "avatars");
+const avatarsDir = path.join(__dirname, "../", "public", "avatars");
 
 const register = async (req, res) => {
   const { email, password } = req.body;
@@ -77,7 +77,6 @@ const updateAvatar = async (req, res) => {
     avatarURL,
   });
 };
-
 module.exports = {
   register: ctrlWrapper(register),
   login: ctrlWrapper(login),
